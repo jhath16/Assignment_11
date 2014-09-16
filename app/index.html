@@ -22,28 +22,27 @@
     <!-- endbuild -->
   </head>
   <body>
-
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
-
-
-        <li>Modernizr</li>
-
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+    <div class="input-container">
+      <h1>Chirp</h1>
+        <form id="chirp">
+          <textarea id="chirp-box" placeholder="Talk about yourself..." rows="4" columns="80" maxlength="160" id="inputbox"></textarea>
+          <div class="button">Chirp!</div>
+          <div class="clearfix"></div>
+        </form>
     </div>
+
+  <div class="chirp-holder">
+
+  </div>
+
+    <script id="text-body" type="text/template">
+      <div class="each-chirp">
+        <p><%= text %></p>
+        <div class="chirp-button" id="edit">Edit</div>
+        <div class="chirp-button" id="delete">Delete</div>
+      </div>
+    </script>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
