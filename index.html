@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Assignment_11</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="input-container">
+      <h1>Chirp</h1>
+        <form id="chirp">
+          <textarea id="chirp-box" placeholder="Talk about yourself..." rows="4" columns="80" maxlength="160" id="inputbox"></textarea>
+          <div class="button">Chirp!</div>
+          <div class="clearfix"></div>
+        </form>
+    </div>
+
+  <div class="chirp-holder">
+
+  </div>
+
+    <script id="text-body" type="text/template">
+      <div class="each-chirp">
+        <p><%= text %></p>
+        <div class="chirp-button" id="edit">Edit</div>
+        <div class="chirp-button" id="delete">Delete</div>
+      </div>
+    </script>
+
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
