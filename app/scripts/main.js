@@ -16,22 +16,37 @@ $(function() {
     success: function(data) {
       $.each(data, function(i, each) {
         renderTemplate('text-body', '.chirp-holder', each);
-    });
+      });
     }
+  });
+
+
+
+  //Post Function
+  $('.button').on('click', function() {
+    $.ajax(url, {
+      type: 'post',
+      dataType: 'json',
+      data: {
+        text: $('#chirp-box').val()
+      },
+      success: function(newData) {
+        renderTemplate('text-body', '.chirp-holder', newData);
+      }
+    });
   });
 });
 
 
-//Post Function
-$('.button').on('click', function() {
-  $.ajax(url, {
-    type: 'post',
-    dataType: 'json',
-    data: {
-      text: $('#chirp-box').val()
-    },
-    success: function(newData) {
-      renderTemplate('text-body', '.chirp-holder', newData);
-    }
+//Delete Function
+
+$('#delete').on('click', function() {
+
+  $.ajax(url).done(function(item) {
+    $.ajax({
+      type:'delete',
+      dataType:'json',
+      url:"http://tiny-pizza-server.herokuapp.com/collections/chirp/" + item._id,
+    });
   });
 });
