@@ -35,18 +35,22 @@ $(function() {
       }
     });
   });
-});
+
 
 
 //Delete Function
 
-$('#delete').on('click', function() {
+$(document).on('click','.delete-button', function() {
+  var id = $(this).attr('data-id');
+  console.log(id);
 
-  $.ajax(url).done(function(item) {
-    $.ajax({
-      type:'delete',
-      dataType:'json',
-      url:"http://tiny-pizza-server.herokuapp.com/collections/chirp/" + item._id,
+  $.ajax(url).done(function() {
+      $.ajax({
+        type:'delete',
+        dataType:'json',
+        url:"http://tiny-pizza-server.herokuapp.com/collections/chirp/" + id,
     });
   });
+
+});
 });
